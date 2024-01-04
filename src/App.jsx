@@ -9,7 +9,10 @@ import Header from "./components/Header";
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="bg-[#1D232A] text-white w-screen h-screen">
+      <div
+        className="bg-[#1D232A] text-white w-screen"
+        style={{ fontFamily: "Verdana, sans-serif", minHeight: '100vh'}}
+      >
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

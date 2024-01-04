@@ -1,6 +1,6 @@
 const Skills = () => {
   return (
-    <div>
+    <div className="py-10">
       Skills
     </div>
   )
