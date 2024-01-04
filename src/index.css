@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .custom-input {
+    background-color: #1d232a;
+    border-color: #374151;
+    border-width: 1px;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    width: 100%;
+    color: #a6acba;
+  }
+}

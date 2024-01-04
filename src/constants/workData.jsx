@@ -1,5 +1,6 @@
 export const workData = [
   {
+    id: 1,
     company: "Quinbay",
     role: "Software Engineer",
     description:
@@ -8,6 +9,7 @@ export const workData = [
     endDate: "Present",
   },
   {
+    id: 2,
     company: "Quinbay",
     role: "Software Engineer Intern",
     description:

@@ -8,7 +8,7 @@ const Projects = () => {
       <h1 className="font-semibold text-2xl text-center">Projects</h1>
       <div className="py-10 flex gap-5 flex-wrap">
         {projectsData.map((project) => (
-          <div className="relative group">
+          <div className="relative group" key={project.id}>
             <img
               src={project.imgPath}
               alt="work-1"

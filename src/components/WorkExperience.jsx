@@ -5,13 +5,14 @@ const WorkExperience = () => {
   return (
     <div className="py-10">
       {workData.map((work) => (
-        <div className="flex gap-4">
+        <div className="flex gap-4" key={work.id}>
           <div className="min-w-52">
             <h1 className="font-semibold tracking-widest text-right">
               {work.company}
             </h1>
             <div className="text-gray-300 my-5 text-justify font-thin tracking-wider font-customText">
-              <p className="text-right">{work.startDate}-</p>
+              <p className="text-right">{work.startDate}</p>
+              <p className="text-right pr-8">-</p>
               <p className="text-right">{work.endDate}</p>
             </div>
           </div>

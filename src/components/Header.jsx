@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="py-6 px-8 flex justify-between items-center">
+    <div className="py-6 px-28 flex justify-between items-center">
       <p style={{ fontFamily: "PT Serif" }} className="tracking-[0.5rem]">
         <Link to="/">JAHNAVI</Link>
       </p>

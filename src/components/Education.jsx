@@ -1,11 +1,11 @@
 import VerticalLineWithCircles from "./VerticalLineWithCircles";
-import { educationData } from '../constants/educationData'
+import { educationData } from "../constants/educationData";
 
 const Education = () => {
   return (
     <div className="py-10">
       {educationData.map((education) => (
-        <div className="flex gap-4">
+        <div className="flex gap-4" key={education.id}>
           <div className="w-48 text-right">
             <h1 className="font-semibold tracking-widest">
               {education.degree}
