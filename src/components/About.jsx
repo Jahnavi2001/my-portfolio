@@ -7,7 +7,7 @@ import Education from "./Education";
 const tabs = [
   {
     id: "experience",
-    label: "Work Experience",
+    label: "Experience",
     component: <WorkExperience />,
   },
   {
@@ -30,7 +30,7 @@ const About = () => {
   };
 
   return (
-    <div className="py-10 px-44">
+    <div className="py-10 px-8 lg:px-44">
       <div className="flex flex-col items-center">
         <h1 className="font-semibold text-2xl">About Me</h1>
         <img src={profileImage} alt="profile" className="w-52 h-52 mt-8 mb-4" />

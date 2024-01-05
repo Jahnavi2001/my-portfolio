@@ -1,7 +1,8 @@
 const Home = () => {
   return (
-    <div>
-      Home
+    <div className="pb-10 pt-32 px-44">
+      <p>Hi,</p>
+      <p>I'm Jahnavi Vuyyuru</p>
     </div>
   )
 }

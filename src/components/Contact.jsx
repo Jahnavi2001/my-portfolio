@@ -55,12 +55,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="py-10 px-44 flex flex-col items-center">
+    <div className="py-10 px-8 lg:px-44 flex flex-col items-center">
       <h1 className="font-semibold text-2xl">Contact Me</h1>
       <p className="my-4 text-gray-400">Get in Touch</p>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="flex flex-col gap-6 w-1/2 mt-4"
+        className="flex flex-col gap-6 w-full lg:w-1/2 mt-4"
       >
         <div className="flex flex-col gap-1">
           <label>Your name</label>
