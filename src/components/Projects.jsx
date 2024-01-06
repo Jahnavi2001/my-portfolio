@@ -2,20 +2,8 @@ import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { projectsData } from "../constants/projectsData";
 import { motion } from "framer-motion";
-
-const containerVariants = {
-  hidden: {
-    x: "100vw",
-  },
-  visible: {
-    x: 0,
-    transition: { delay: 0.3, ease: "easeInOut" },
-  },
-  exit: {
-    x: "-100vw",
-    transition: { ease: "easeInOut" },
-  },
-};
+import BottomNavigation from "./BottomNavigation";
+import { containerVariants } from "../utils/framer-page-variants";
 
 const Projects = () => {
   return (
@@ -49,6 +37,8 @@ const Projects = () => {
           </div>
         ))}
       </div>
+
+      <BottomNavigation text="Let's go over the resume" path="/resume" />
     </motion.div>
   );
 };

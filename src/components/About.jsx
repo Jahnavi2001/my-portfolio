@@ -4,6 +4,8 @@ import WorkExperience from "./WorkExperience";
 import Skills from "./Skills";
 import Education from "./Education";
 import { motion } from "framer-motion";
+import BottomNavigation from "./BottomNavigation";
+import { containerVariants } from "../utils/framer-page-variants";
 
 const tabs = [
   {
@@ -22,20 +24,6 @@ const tabs = [
     component: <Education />,
   },
 ];
-
-const containerVariants = {
-  hidden: {
-    x: "100vw",
-  },
-  visible: {
-    x: 0,
-    transition: { delay: 0.3, ease: "easeInOut" },
-  },
-  exit: {
-    x: "-100vw",
-    transition: { ease: "easeInOut" },
-  },
-};
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("experience");
@@ -76,6 +64,11 @@ const About = () => {
         </ul>
         {tabs.find((tab) => activeTab === tab.id)?.component}
       </div>
+
+      <BottomNavigation
+        text="Let's take a look at my projects"
+        path="/projects"
+      />
     </motion.div>
   );
 };

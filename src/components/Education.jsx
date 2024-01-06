@@ -6,7 +6,7 @@ const Education = () => {
     <div className="py-10">
       {educationData.map((education) => (
         <div className="flex gap-4" key={education.id}>
-          <div className="min-w-24 max-w-24 lg:w-48 text-right">
+          <div className="min-w-40 max-w-24 lg:w-48 text-right">
             <h1 className="font-semibold tracking-widest break-words">
               {education.degree}
             </h1>
