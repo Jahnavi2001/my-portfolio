@@ -1,10 +1,31 @@
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { projectsData } from "../constants/projectsData";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {
+    x: "100vw",
+  },
+  visible: {
+    x: 0,
+    transition: { delay: 0.3, ease: "easeInOut" },
+  },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
+};
 
 const Projects = () => {
   return (
-    <div className="py-10 px-8 lg:px-44">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className="py-10 px-8 lg:px-44"
+    >
       <h1 className="font-semibold text-2xl text-center">Projects</h1>
       <div className="py-10 flex gap-5 flex-wrap justify-center">
         {projectsData.map((project) => (
@@ -28,7 +49,7 @@ const Projects = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default Projects;

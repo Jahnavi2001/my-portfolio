@@ -3,6 +3,7 @@ import profileImage from "../assets/profile.png";
 import WorkExperience from "./WorkExperience";
 import Skills from "./Skills";
 import Education from "./Education";
+import { motion } from "framer-motion";
 
 const tabs = [
   {
@@ -22,6 +23,20 @@ const tabs = [
   },
 ];
 
+const containerVariants = {
+  hidden: {
+    x: "100vw",
+  },
+  visible: {
+    x: 0,
+    transition: { delay: 0.3, ease: "easeInOut" },
+  },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
+};
+
 const About = () => {
   const [activeTab, setActiveTab] = useState("experience");
 
@@ -30,7 +45,13 @@ const About = () => {
   };
 
   return (
-    <div className="py-10 px-8 lg:px-44">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className="py-10 px-8 lg:px-44"
+    >
       <div className="flex flex-col items-center">
         <h1 className="font-semibold text-2xl">About Me</h1>
         <img src={profileImage} alt="profile" className="w-52 h-52 mt-8 mb-4" />
@@ -55,7 +76,7 @@ const About = () => {
         </ul>
         {tabs.find((tab) => activeTab === tab.id)?.component}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

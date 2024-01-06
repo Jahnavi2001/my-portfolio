@@ -1,6 +1,28 @@
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {
+    x: "100vw",
+  },
+  visible: {
+    x: 0,
+    transition: { delay: 0.3, ease: "easeInOut" },
+  },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
+};
+
 const Resume = () => {
   return (
-    <div className="py-10 px-8 lg:px-44 flex flex-col items-center">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className="py-10 px-8 lg:px-44 flex flex-col items-center"
+    >
       <h1 className="font-semibold text-2xl">Resume</h1>
       <p className="my-4 text-gray-400">View (or) Download the resume</p>
       <div className="py-10 px-4 w-full overflow-scroll flex justify-center">
@@ -10,7 +32,7 @@ const Resume = () => {
           src="https://drive.google.com/file/d/1XWE8xvCUyIaPuhl-CsOJBoWTHO6wh1v0/preview"
         ></iframe>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

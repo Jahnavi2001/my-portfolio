@@ -3,6 +3,21 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiFillMail } from "react-icons/ai";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {
+    x: "100vw",
+  },
+  visible: {
+    x: 0,
+    transition: { delay: 0.3, ease: "easeInOut" },
+  },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
+};
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -55,7 +70,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="py-10 px-8 lg:px-44 flex flex-col items-center">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className="py-10 px-8 lg:px-44 flex flex-col items-center"
+    >
       <h1 className="font-semibold text-2xl">Contact Me</h1>
       <p className="my-4 text-gray-400">Get in Touch</p>
       <form
@@ -116,7 +137,7 @@ const Contact = () => {
           <FaGithub className="w-8 h-8" />
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
