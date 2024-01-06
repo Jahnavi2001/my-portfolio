@@ -1,5 +1,5 @@
 import { useState } from "react";
-import profileImage from "../assets/profile.png";
+import profileImage from "../assets/profile.jpeg";
 import WorkExperience from "./WorkExperience";
 import Skills from "./Skills";
 import Education from "./Education";
@@ -42,7 +42,7 @@ const About = () => {
     >
       <div className="flex flex-col items-center">
         <h1 className="font-semibold text-2xl">About Me</h1>
-        <img src={profileImage} alt="profile" className="w-52 h-52 mt-8 mb-4" />
+        <img src={profileImage} alt="profile" className="w-72 h-72 object-cover  mt-8 mb-4 rounded-full" />
         <p className="text-gray-300">Developer</p>
       </div>
       <div className="mt-12">

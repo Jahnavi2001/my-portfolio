@@ -11,7 +11,7 @@ const buttonVariants = {
       duration: 0.4,
       ease: "easeOut",
     },
-  },
+  }
 };
 
 const BottomNavigation = ({ text, path }) => {
@@ -22,7 +22,7 @@ const BottomNavigation = ({ text, path }) => {
   };
 
   return (
-    <button
+    <motion.button
       className="mt-10 flex items-center gap-4"
       onClick={handleNavigation}
     >
@@ -34,7 +34,7 @@ const BottomNavigation = ({ text, path }) => {
       >
         <FaArrowRight />
       </motion.span>
-    </button>
+    </motion.button>
   );
 };
 

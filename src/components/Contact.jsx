@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { AiFillMail } from "react-icons/ai";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import BottomNavigation from "./BottomNavigation";
 import { containerVariants } from "../utils/page-animations";
 import { childVariants, parentVariants } from "../utils/text-animations";
+import SocialLinks from "./SocialLinks";
+import { checkValidEmail } from "../utils/validate";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -26,6 +25,8 @@ const Contact = () => {
   };
 
   const handleSendMail = () => {
+    if (!checkValidEmail(form.email)) return
+    
     setLoading(true);
 
     emailjs
@@ -109,25 +110,23 @@ const Contact = () => {
           </motion.div>
           <motion.button
             className="bg-[#37D39A] rounded-md px-6 py-3 w-full text-black"
+            disabled={!(form.email && form.message && form.name)}
             onClick={handleSendMail}
             variants={childVariants}
+            whileHover={{
+              scale: 1.03,
+              transition: {
+                repeatType: "reverse",
+                repeat: Infinity,
+                duration: 0.3,
+              },
+            }}
           >
             {loading ? "Sending..." : "Send"}
           </motion.button>
 
-          <motion.div className="pt-8 flex gap-8 justify-center" variants={childVariants}>
-            <Link to="mailto:jahnavivuyyuru179@gmail.com">
-              <AiFillMail className="w-10 h-10" />
-            </Link>
-            <Link
-              to="https://www.linkedin.com/in/jahnavi-vuyyuru-17900ks/"
-              target="_blank"
-            >
-              <FaLinkedin className="w-8 h-8" />
-            </Link>
-            <Link to="https://github.com/Jahnavi2001" target="_blank">
-              <FaGithub className="w-8 h-8" />
-            </Link>
+          <motion.div variants={childVariants} className="pt-8 ">
+            <SocialLinks />
           </motion.div>
         </motion.form>
       </div>

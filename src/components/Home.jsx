@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import BottomNavigation from "./BottomNavigation";
 import { containerVariants } from "../utils/page-animations";
 import { childVariants, parentVariants } from "../utils/text-animations";
+import SocialLinks from "./SocialLinks";
 
 const svgVariants = {
   visible: {
@@ -31,16 +32,10 @@ const Home = () => {
           className="flex flex-col gap-4 lg:w-1/2 justify-center"
           style={{ fontFamily: "Trebuchet MS, sans-serif" }}
         >
-          <motion.p
-            variants={childVariants}
-            className="font-semibold text-5xl"
-          >
-            Hi,
+          <motion.p variants={childVariants} className="font-semibold text-5xl">
+            Hello,
           </motion.p>
-          <motion.p
-            variants={childVariants}
-            className="font-semibold text-5xl"
-          >
+          <motion.p variants={childVariants} className="font-semibold text-5xl">
             I'm <span className="text-pink-600">Jahnavi Vuyyuru</span>
           </motion.p>
           <motion.p
@@ -55,6 +50,9 @@ const Home = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </motion.p>
+          <motion.div variants={childVariants} className="flex pt-4">
+            <SocialLinks />
+          </motion.div>
         </motion.div>
         <div className="lg:w-1/2 text-center flex justify-center pt-12">
           <motion.img

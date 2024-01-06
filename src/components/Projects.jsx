@@ -26,7 +26,7 @@ const Projects = () => {
             key={project.id}
             variants={childVariants}
             whileHover={{
-              scale: 1.01,
+              scale: 1.02,
             }}
           >
             <img
