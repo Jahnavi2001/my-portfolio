@@ -1,11 +1,22 @@
 import VerticalLineWithCircles from "./VerticalLineWithCircles";
 import { workData } from "../constants/workData";
+import { motion } from "framer-motion";
+import { childVariants, parentVariants } from "../utils/text-animations";
 
 const WorkExperience = () => {
   return (
-    <div className="py-10">
+    <motion.div
+      variants={parentVariants}
+      initial="hidden"
+      animate="visible"
+      className="py-10 overflow-hidden"
+    >
       {workData.map((work) => (
-        <div className="flex gap-4" key={work.id}>
+        <motion.div
+          className="flex gap-4"
+          key={work.id}
+          variants={childVariants}
+        >
           <div className="min-w-24 lg:min-w-52">
             <h1 className="font-semibold tracking-widest text-right break-words">
               {work.company}
@@ -17,7 +28,7 @@ const WorkExperience = () => {
             </div>
           </div>
           <div className="w-5">
-            <VerticalLineWithCircles lineHeight="48" />
+            <VerticalLineWithCircles />
           </div>
           <div>
             <h1 className="tracking-[0.09rem]">{work.role}</h1>
@@ -25,9 +36,9 @@ const WorkExperience = () => {
               {work.description}
             </p>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 export default WorkExperience;

@@ -5,7 +5,8 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import BottomNavigation from "./BottomNavigation";
-import { containerVariants } from "../utils/framer-page-variants";
+import { containerVariants } from "../utils/page-animations";
+import { childVariants, parentVariants } from "../utils/text-animations";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -63,16 +64,17 @@ const Contact = () => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="py-10 px-8 lg:px-44"
+      className="py-10 px-8 lg:px-44 overflow-hidden"
     >
       <div className="flex flex-col items-center">
         <h1 className="font-semibold text-2xl">Contact Me</h1>
         <p className="my-4 text-gray-400">Get in Touch</p>
-        <form
+        <motion.form
+          variants={parentVariants}
           onSubmit={(e) => e.preventDefault()}
           className="flex flex-col gap-6 w-full lg:w-1/2 mt-4"
         >
-          <div className="flex flex-col gap-1">
+          <motion.div className="flex flex-col gap-1" variants={childVariants}>
             <label>Your name</label>
             <input
               type="text"
@@ -82,8 +84,8 @@ const Contact = () => {
               value={form.name}
               className="custom-input"
             />
-          </div>
-          <div className="flex flex-col gap-1">
+          </motion.div>
+          <motion.div className="flex flex-col gap-1" variants={childVariants}>
             <label>Your Email</label>
             <input
               type="email"
@@ -93,8 +95,8 @@ const Contact = () => {
               value={form.email}
               className="custom-input"
             />
-          </div>
-          <div className="flex flex-col gap-1">
+          </motion.div>
+          <motion.div className="flex flex-col gap-1" variants={childVariants}>
             <label>Your Message</label>
             <textarea
               rows="7"
@@ -104,29 +106,30 @@ const Contact = () => {
               value={form.message}
               className="custom-input"
             />
-          </div>
-          <button
+          </motion.div>
+          <motion.button
             className="bg-[#37D39A] rounded-md px-6 py-3 w-full text-black"
             onClick={handleSendMail}
+            variants={childVariants}
           >
             {loading ? "Sending..." : "Send"}
-          </button>
-        </form>
+          </motion.button>
 
-        <div className="pt-8 flex gap-8 items-center">
-          <Link to="mailto:jahnavivuyyuru179@gmail.com">
-            <AiFillMail className="w-10 h-10" />
-          </Link>
-          <Link
-            to="https://www.linkedin.com/in/jahnavi-vuyyuru-17900ks/"
-            target="_blank"
-          >
-            <FaLinkedin className="w-8 h-8" />
-          </Link>
-          <Link to="https://github.com/Jahnavi2001" target="_blank">
-            <FaGithub className="w-8 h-8" />
-          </Link>
-        </div>
+          <motion.div className="pt-8 flex gap-8 justify-center" variants={childVariants}>
+            <Link to="mailto:jahnavivuyyuru179@gmail.com">
+              <AiFillMail className="w-10 h-10" />
+            </Link>
+            <Link
+              to="https://www.linkedin.com/in/jahnavi-vuyyuru-17900ks/"
+              target="_blank"
+            >
+              <FaLinkedin className="w-8 h-8" />
+            </Link>
+            <Link to="https://github.com/Jahnavi2001" target="_blank">
+              <FaGithub className="w-8 h-8" />
+            </Link>
+          </motion.div>
+        </motion.form>
       </div>
 
       <BottomNavigation text="Return to the homepage" path="/" />

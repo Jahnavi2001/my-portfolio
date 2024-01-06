@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import BottomNavigation from "./BottomNavigation";
-import { containerVariants } from "../utils/framer-page-variants";
+import { containerVariants } from "../utils/page-animations";
 
 const Resume = () => {
   return (
