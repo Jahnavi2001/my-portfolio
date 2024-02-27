@@ -65,7 +65,7 @@ const Contact = () => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="py-10 px-8 lg:px-44 overflow-hidden"
+      className="py-10 px-8 lg:px-44 overflow-hidden w-full"
     >
       <div className="flex flex-col items-center">
         <h1 className="font-semibold text-2xl">Contact Me</h1>

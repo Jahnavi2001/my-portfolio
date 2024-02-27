@@ -34,9 +34,9 @@ const Projects = () => {
               alt="work-1"
               className="w-[570px] h-[500px] rounded-lg"
             />
-            <div className="absolute left-0 bottom-0 h-full py-4 px-16 hidden group-hover:flex flex-col items-center gap-4 justify-end bg-gradient-to-t from-stone-800 to-transparent rounded-lg">
+            <div className="absolute left-0 bottom-0 h-full py-4 px-16 hidden group-hover:flex flex-col items-center gap-4 justify-end bg-gradient-to-t from-black to-transparent rounded-lg">
               <h1 className="font-semibold text-lg">{project.name}</h1>
-              <p className="font-thin text-sm font-customText">
+              <p className="font-thin text-sm font-customText text-justify">
                 {project.text}
               </p>
               <Link to={project.redirectUrl} target="_blank">

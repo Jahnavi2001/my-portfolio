@@ -46,7 +46,7 @@ const About = () => {
         <p className="text-gray-300">Developer</p>
       </div>
       <div className="mt-12">
-        <ul className="flex gap-20 border-b-[0.5px] border-b-neutral-700">
+        <ul className="flex gap-12 lg:gap-20 border-b-[0.5px] border-b-neutral-700">
           {tabs.map((tab) => (
             <li
               key={tab.id}

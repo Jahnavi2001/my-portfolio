@@ -42,13 +42,12 @@ const Home = () => {
             variants={childVariants}
             className="font-customText font-thin text-justify pt-4"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Frontend Developer with 2+ years of experience, specialized in
+            JavaScript, ReactJS and VueJS. Proficient in collaborative project
+            delivery, feature development, performance optimization and
+            adherence to coding standards. Seeking a challenging role to
+            leverage frontend expertise and contribute to projects, while
+            embracing cutting-edge technologies.
           </motion.p>
           <motion.div variants={childVariants} className="flex pt-4">
             <SocialLinks />
